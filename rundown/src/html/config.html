@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+
+  <body>
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <div class="form-wrapper">
+      <div class="form-header">
+        <h1>Configure Your Rundown</h1>
+      </div>
+      <form id="rundown-config">
+        <label for="title">Rundown Title</label>
+        <input name="title" type="text" name="title" id="title" />
+
+        <hr />
+
+        <label for="sections">Add a Section</label>
+        <select name="sections" id="sections">
+          <option value="about">About</option>
+          <option value="commands">Commands</option>
+          <option value="values">Values</option>
+          <option value="rules">Rules</option>
+          <option value="clips">Clips</option>
+          <option value="memes">Memes</option>
+        </select>
+        <div class="error" id="add-error"></div>
+        <button id="section-add" class="button outline-inward">Add</button>
+
+      </form>
+
+      <button id="submit" class="button outline-inward">Update</button>
+    </div>
+  </body>
+    
+</html>

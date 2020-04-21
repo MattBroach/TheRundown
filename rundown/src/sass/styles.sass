@@ -1,0 +1,210 @@
+@import "_variables"
+@import "_mixins"
+@import "_animations"
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap')
+
+body
+  color: #000
+  font-family: 'Roboto', sans-serif
+  font-size: 14px
+
+#rundown
+  color: $text
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, .9)
+  opacity: 0
+  transition: opacity .5s
+  pointer-events: none
+  display: flex
+  flex-direction: column
+
+.title
+  text-align: center
+  background: $primary-transparent
+  color: $text-header
+
+.sections
+  flex: 1
+  display: flex
+  flex-direction: row
+  justify-content: center
+  padding: 10px 50px
+
+.section
+  flex: 1
+  padding: 50px
+  max-width: 400px
+
+.footer
+  height: 25%
+  text-align: center
+
+#show-button
+  position: absolute
+  top: 15%
+  left: 20px
+  opacity: 1
+  transition: opacity .5s
+  font-size: 1.1rem
+  padding: .5em .8em
+  margin: .4em
+
+#watch-button
+  font-size: 2rem
+  padding: .2em .8em
+  margin: 0
+
+.button
+  cursor: pointer
+  text-decoration: none
+  outline: none
+  background: $primary-transparent
+  transition: all .3s
+  border: 2px solid $primary
+  color: $text-header
+
+  &:hover
+    background: $primary
+    border: 2px solid transparent
+
+/* Outline Inward */
+.outline-inward 
+  display: inline-block
+  $outerBorderWidth: 2px
+  $innerBorderWidth: 2px
+  position: relative
+
+  &:before 
+    content: ''
+    position: absolute
+    border: $primary solid $outerBorderWidth
+    top: -($outerBorderWidth + $innerBorderWidth) * 2
+    right: -($outerBorderWidth + $innerBorderWidth) * 2
+    bottom: -($outerBorderWidth + $innerBorderWidth) * 2
+    left: -($outerBorderWidth + $innerBorderWidth) * 2
+    opacity: 0
+    transition-duration: .3s
+    transition-property: top right bottom left
+  
+  &:hover:before 
+    top: -($outerBorderWidth + $innerBorderWidth)
+    right: -($outerBorderWidth + $innerBorderWidth)
+    bottom: -($outerBorderWidth + $innerBorderWidth)
+    left: -($outerBorderWidth + $innerBorderWidth)
+    opacity: 1
+
+.form-wrapper
+  max-width: 400px
+  margin: 10px auto
+  background: #F7F7F7
+
+form
+  padding: 16px
+
+input, textarea, select
+  -webkit-transition: all 0.30s ease-in-out
+  -moz-transition: all 0.30s ease-in-out
+  -ms-transition: all 0.30s ease-in-out
+  -o-transition: all 0.30s ease-in-out
+  outline: none
+  box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  width: 100%
+  background: #fff
+  margin-bottom: 4%
+  border: 1px solid #ccc
+  padding: 3%
+  color: #555
+  font-size: 95%
+
+input:focus, textarea:focus, select:focus
+  box-shadow: 0 0 5px $primary
+  padding: 3%
+  border: 1px solid $primary
+
+input[type="checkbox"]
+  display: inline-block
+  width: auto
+  
+
+#submit
+  font-size: 1.5rem
+  width: 100%
+  padding: 20px
+
+.form-header
+  background: $primary
+  max-width: 400px
+  text-align: center
+  padding: 20px
+  color: $text-header
+  
+  h1
+    margin: 0
+    font-size: 1.5rem
+
+.icon-list
+  position: relative
+
+.icon-list-icon
+  position: absolute
+  top: -5px
+  left: 0
+  color: $primary
+  font-weight: bold
+  font-size: 1.5rem
+  text-align: right
+
+.icon-list-item
+  display: inline-block
+  max-width: 300px
+  padding: 0
+  padding-left: 20px
+  margin: 0
+  margin-bottom: 10px
+
+.icon-list-item-simple
+  display: inline-block
+  max-width: 300px
+  padding: 0
+  padding-left: 30px
+  margin: 0
+  margin-bottom: 10px
+
+.icon-list-definition
+  color: $text-header
+
+.icon-list-description
+  margin: 0
+  padding: 0
+
+.error
+  color: $text-error
+  font-size: 12px
+  padding-bottom: 10px
+
+.clip-thumbnail-link
+  display: inline-block
+  padding: 0
+  margin-bottom: 20px
+  text-decoration: none
+  color: $text-error
+
+  input
+    display: none
+
+.clip-thumbnail
+  max-width: 250px
+  margin: 0
+  padding: 0
+
+.fade-out
+  opacity: 0
+  display: block
+  position: absolute
+  -webkit-animation: fadeout 2s
